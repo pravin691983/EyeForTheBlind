@@ -1,88 +1,55 @@
-# Bike Sharing
+# EYE FOR BLIND
 
-> To build a multiple linear regression model for the prediction of demand for shared bikes.
-
-<p>
-<img src ="https://play-lh.googleusercontent.com/56LEcA4KXoBhdqSn3jHzcSubIjgqF1_mHikBExgrGRcRML2oFHZLifYfBz4kiGsHDh8" alt='Figure 1'>
-<center> <b>Figure 1. BookBikes</b> </center> 
- </br>  
-</p>
+> To create a deep learning model which can explain the contents of an image in the form of speech through caption generation with an attention mechanism on Flickr8K dataset.
 
 ## Table of Contents
 
-- [Overview Business Understanding](#overview-business-understanding)
 - [Problem Statement Business Objectives](#problem-statement-business-objectives)
 - [Data in depth](#data-in-depth)
 - [Approach](#approach)
 - [Technologies Used](#technologies-used)
-- [Conclusions](#conclusions)
 
 <!-- You can include any other section that is pertinent to your problem -->
 
-## Overview Business Understanding
-
-You are required to model the demand for shared bikes with the available independent variables. It will be used by the management to understand how exactly the demands vary with different features. They can accordingly manipulate the business strategy to meet the demand levels and meet the customer's expectations. Further, the model will be a good way for management to understand the demand dynamics of a new market.
-
 ## Problem Statement Business Objectives
 
-A bike-sharing system is a service in which bikes are made available for shared use to individuals on a short term basis for a price or free. Many bike share systems allow people to borrow a bike from a "dock" which is usually computer-controlled wherein the user enters the payment information, and the system unlocks it. This bike can then be returned to another dock belonging to the same system.
+In this capstone project, you need to create a deep learning model which can explain the contents of an image in the form of speech through caption generation with an attention mechanism on Flickr8K dataset. This kind of model is a use-case for blind people so that they can understand any image with the help of speech. The caption generated through a CNN-RNN model will be converted to speech using a text to speech library.
 
-A US bike-sharing provider BoomBikes has recently suffered considerable dips in their revenues due to the ongoing Corona pandemic. The company is finding it very difficult to sustain in the current market scenario. So, it has decided to come up with a mindful business plan to be able to accelerate its revenue as soon as the ongoing lockdown comes to an end, and the economy restores to a healthy state.
-
-In such an attempt, BoomBikes aspires to understand the demand for shared bikes among the people after this ongoing quarantine situation ends across the nation due to Covid-19. They have planned this to prepare themselves to cater to the people's needs once the situation gets better all around and stand out from other service providers and make huge profits.
-
-They have contracted a consulting company to understand the factors on which the demand for these shared bikes depends. Specifically, they want to understand the factors affecting the demand for these shared bikes in the American market. The company wants to know:
-
-- Which variables are significant in predicting the demand for shared bikes.
-- How well those variables describe the bike demands
-  Based on various meteorological surveys and people's styles, the service provider firm has gathered a large dataset on daily bike demands across the American market based on some factors.
+This problem statement is an application of both deep learning and natural language processing. The features of an image will be extracted by a CNN-based encoder and this will be decoded by an RNN model.
 
 ### Want to
 
-- Understand the driving factors (or driver variables) behind BIKE SHARING, i.e. the variables which are strong indicators of atmost profit.
-- To build a multiple linear regression model for the prediction of demand for shared bikes.
+- To create a deep learning model which can explain the contents of an image in the form of speech through caption generation with an attention mechanism on Flickr8K dataset.
+- The features of an image will be extracted by a CNN-based encoder and this will be decoded by an RNN model.
 
 ## Data in depth
 
 - We are going to analyze datasets,
-- The datasets contains details information related of the bike sharing such as year, month, temp, wind speed etc.
-- The dataset comprises of 730 observations of 16 columns. Below is a table showing names of the few columns.
+- The dataset is taken from the Kaggle website and it consists of sentence-based image descriptions having a list of 8,000 images that are each paired with five different captions which provide clear descriptions of the salient entities and events of the image.
 
 ## Approach
 
-#### Understanding the Dataset
+- The major steps that you have to perform can be briefly summarised in the following below steps:
 
-- To gain insights from data we must look into each aspect of it very carefully. We will start with observing few rows and columns of data both from the starting and from the end.
+#### Data Understanding:
 
-#### Preprocessing
+- To gain insights from data we must look into each aspect of it very carefully. Here, you need to load the data and understand the representation.
 
-- We will deal with erroneous, missing and outliers values of columns.
-- Correlation between different columns
-- See how preprocessing have transformed our dataset.
-- Derive new data from existing data to get more insite
+#### Data Preprocessing:
 
-#### Exploratory Data Analysis on Loan Dataset
+- In this step, you will process both images and captions to the desired format.
 
-- Try to find out answers of some set of questions
+#### Train-Test Split:
 
-#### Build Model after Dataset split
+- Combine both images and captions to create the train and test dataset.
 
-- Build model & validate results after split dataset in train & test repsectiviey using multiple linear regression model
+#### Model Building:
 
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+- This is the stage where you will create your image captioning model by building Encoder, Attention and Decoder model.
 
-## Conclusions
+#### Model Evaluation:
 
-Based on our analysis and as per our final Model, the top 3 predictor variables that influences the bike booking are:
-
-- Temperature (temp) - A coefficient value of ‘0.5309’ indicated that a unit increase in temp variable increases the bike hire numbers by 0.5309 units.
-- Weather Situation 3 (weathersit_3) - A coefficient value of ‘-0.2993’ indicated that, w.r.t Weathersit1, a unit increase in Weathersit3 variable decreases the bike hire numbers by 0.2993 units.
-- Year (yr) - A coefficient value of ‘0.2294’ indicated that a unit increase in yr variable increases the bike hire numbers by 0.2294 units.
-
-Also the next best features that can also be considered are:
-
-- season_4: - A coefficient value of ‘0.1412’ indicated that w.r.t season_1, a unit increase in season_4 variable increases the bike hire numbers by 0.1412 units.
-- windspeed: - A coefficient value of ‘-0.1169’ indicated that, a unit increase in windspeed variable decreases the bike hire numbers by 0.1169 units.
+- Evaluate the models using greedy search and BLEU score.
 
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
